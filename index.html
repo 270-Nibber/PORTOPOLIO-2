@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanif Anugerah Ramadhan | Portfolio</title>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --primary-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 0 5%;
+            margin-top: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-text h2 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .hero-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            box-shadow: 20px 20px 0px rgba(56, 189, 248, 0.1);
+        }
+
+        /* Section Layout */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background-color: var(--surface-color);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .biodata-list {
+            list-style: none;
+        }
+
+        .biodata-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .biodata-list strong {
+            width: 150px;
+            color: var(--primary-color);
+        }
+
+        /* Skills & Projects */
+        .skills-container, .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Social Media Section */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .social-card i {
+            font-size: 1.5rem;
+            color: #E1306C; /* Instagram Color */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+                gap: 3rem;
+            }
+            .hero-text {
+                padding-right: 0;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <nav>
+        <a href="#" class="logo">Selamat Datang<span></span></a>
+        <div class="nav-links">
+            <a href="#beranda">Beranda</a>
+            <a href="#profil">Profil</a>
+            <a href="#proyek">Proyek & Keahlian</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+    </nav>
+
+    
+    <section id="beranda" class="hero">
+        <div class="hero-text">
+            <h2>Halo, Saya</h2>
+            <h1>Hanif Anugerah Ramadhan</h1>
+            <p>Mahasiswa Teknik Informatika yang berdedikasi pada pengembangan perangkat lunak dan desain grafis. Menggabungkan logika pemrograman terstruktur dengan tata letak visual konseptual untuk menciptakan solusi digital yang optimal.</p>
+            <a href="#kontak" class="btn">Mari Berkolaborasi</a>
+        </div>
+        <div class="hero-img">
+            <img src="image/img hanif.jpeg" alt="Hanif Anugerah Ramadhan">
+        </div>
+    </section>
+
+    <!-- Profil / Biodata -->
+    <section id="profil">
+        <h2 class="section-title">Informasi Biodata</h2>
+        <div class="about-grid">
+            <div class="about-desc">
+                <h3>Tentang Saya</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">
+                    Saya adalah mahasiswa Fakultas Sains dan Teknologi di Universitas Muhammadiyah Kalimantan Timur. Memiliki minat yang kuat dalam arsitektur database, simulasi jaringan, serta eksplorasi kreatif di bidang desain media digital dan konseptual logo branding.
+                </p>
+            </div>
+            <div>
+                <ul class="biodata-list">
+                    <li><strong>NIM</strong> <span>2511102441270</span></li>
+                    <li><strong>TTL</strong> <span>Berau, 04 Oktober 2006</span></li>
+                    <li><strong>Program Studi</strong> <span>Teknik Informatika</span></li>
+                    <li><strong>Fakultas</strong> <span>Sains dan Teknologi</span></li>
+                    <li><strong>Universitas</strong> <span>Universitas Muhammadiyah Kalimantan Timur</span></li>
+                    <li><strong>Alamat</strong> <span>Jl. Mahkota Kecamatan Talisayan Kabupaten Berau Provinsi Kalimantan Timur</span></li>
+                    <li><strong>Email</strong> <span><a href="mailto:2511102441270@umkt.ac.id" style="color: var(--primary-color); text-decoration: none;">2511102441270@umkt.ac.id</a></span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyek & Keahlian -->
+    <section id="proyek">
+        <h2 class="section-title">Keahlian & Pengalaman</h2>
+        <div class="projects-container">
+            <div class="card">
+                <i class="fa-solid fa-database"></i>
+                <h3>Database & Pemrograman</h3>
+                <p>Implementasi Object-Oriented Programming (OOP) dan perancangan skema sistem database relasional seperti MySQL, termasuk untuk sistem kompleks (misal: sistem tiket bioskop).</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Struktur Data & Jaringan</h3>
+                <p>Analisis algoritma penyelesaian masalah, perancangan topologi, simulasi routing jaringan, dan penyusunan laporan laboratorium teknis secara terstruktur.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Desain Grafis Konseptual</h3>
+                <p>Penyusunan desain organisasi, tata letak visual media sosial, hingga pengeditan gambar presisi dan manipulasi subjek (seperti pemain sepak bola) untuk kebutuhan publikasi.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-people-group"></i>
+                <h3>Manajemen Organisasi</h3>
+                <p> Sebagai pengurus di bidang kaderisasi, saya bertanggung jawab penuh dalam mengelola alur regenerasi organisasi mulai dari merancang kurikulum pelatihan kepemimpinan, mengeksekusi program orientasi anggota baru.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak">
+        <h2 class="section-title">Jejaring Sosial</h2>
+        <p style="text-align: center; color: var(--text-muted);">Mari terhubung melalui platform media sosial untuk melihat portofolio visual dan organisasi saya.</p>
+        
+        <div class="social-grid">
+            <a href="https://www.instagram.com/hnf.anugrh/" target="_blank" class="social-card">
+                <i class="fa-brands fa-instagram"></i>
+                <div>
+                    <h4>My Instagram</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">@hnf.anugrh</span>
+                </div>
+
+            <a href="https://www.facebook.com/share/1GYhgJBEDo/" target="_blank" class="social-card">
+                <i class="fa-brands fa-facebook"></i>
+                <div>
+                    <h4>My Facebook</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">@hanif.anugrah</span>
+                </div>
+            </a>
+            
+            <a href="https://www.instagram.com/immsaintekumkt_?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" class="social-card">
+                <i class="fa-brands fa-instagram"></i>
+                <div>
+                    <h4>Organizational </h4>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">@immsaintekumkt_</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hanif Anugerah Ramadhan. Crafted for Professional Portfolio.</p>
+    </footer>
+
+</body>
+</html>
+
+</body>
+</html>
